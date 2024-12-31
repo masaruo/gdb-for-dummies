@@ -1,0 +1,22 @@
+define printlist
+	set $crnt = (list_t*)$arg0
+	while ($crnt)
+		$arg1 $crnt->data_
+		set $crnt = $crnt->next
+	end
+end
+document printlist
+Traverse list and print each element using specified printer function.
+Usage: printlist &head_of_list printer_function
+Example: printlist &head_of_list print_a_person
+end
+
+define print_a_person
+	set $person = (person_t*)$arg0
+	printf "age is %d and ", $person.age_
+	printf "name is %s\n", $person.name_
+end
+
+define print_persons
+	printlist $arg0 print_a_person
+end
