@@ -10,5 +10,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 	clangd \
 	clang-format \
 	pkg-config \
+	vim \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*

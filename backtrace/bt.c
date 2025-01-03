@@ -1,8 +1,17 @@
 #include <stdio.h>
 
+void loopy()
+{
+	while (1)
+	{
+		dprintf(2, "loopy...\n");
+	}
+}
+
 void funcC(int *ptr)
 {
 	*ptr = 42;
+	loopy();
 }
 
 void funcB(int *ptr)
