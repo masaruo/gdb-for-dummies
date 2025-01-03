@@ -5,11 +5,6 @@ define printlist
 		set $crnt = $crnt->next
 	end
 end
-document printlist
-Traverse list and print each element using specified printer function.
-Usage: printlist &head_of_list printer_function
-Example: printlist &head_of_list print_a_person
-end
 
 define print_a_person
 	set $person = (person_t*)$arg0
