@@ -1,44 +1,18 @@
 {
-    "name": "cpp-dev",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-            "VARIANT": "ubuntu-22.04"
-        }
-    },
-    "runArgs": [
-        "--name=cpp-dev",
-        "--rm",
-        "--cap-add=SYS_PTRACE", 
-        "--security-opt", 
-        "seccomp=unconfined"
-    ],
+    "name": "C/C++ Development",
+    "dockerComposeFile": "docker-compose.yaml",
+    "service": "cpp_dev",
+    "workspaceFolder": "/workspace",
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-vscode.cpptools",
-                "ms-vscode.cmake-tools",
-                "twxs.cmake",
                 "ms-vscode.cpptools-themes",
                 "ms-vscode.cpptools-extension-pack"
-            ],
-            "settings": {
-                "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
-            }
+            ]
         }
     },
     "remoteUser": "vscode",
-    "features": {
-        "ghcr.io/devcontainers/features/common-utils:2": {
-            "installZsh": true,
-            "username": "vscode",
-            "upgradePackages": true
-        },
-        "ghcr.io/devcontainers/features/git:1": {
-            "version": "latest"
-        }
-    },
-    "mounts": [
-        "source=${localEnv:HOME}/.gdbinit,target=/home/vscode/.config/gdb/gdbinit,type=bind,consistency=cached"
-    ]
+    "updateRemoteUserUID": true,
+    "shutdownAction": "stopCompose"
 }

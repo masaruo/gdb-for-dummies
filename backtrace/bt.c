@@ -16,7 +16,7 @@ void funcC(int *ptr)
 
 void funcB(int *ptr)
 {
-	ptr = NULL;
+	// ptr = NULL;
 	funcC(ptr);
 }
 

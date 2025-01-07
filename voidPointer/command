@@ -8,8 +8,7 @@ end
 
 define print_a_person
 	set $person = (person_t*)$arg0
-	printf "age is %d and ", $person.age_
-	printf "name is %s\n", $person.name_
+	printf "name:[%s] and age:[%d]\n", $person.name_, $person.age_
 end
 
 define print_persons

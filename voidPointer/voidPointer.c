@@ -37,7 +37,7 @@ int	main(void)
 	hoge.age_ = 20;
 	piyo.name_ = strdup("piyo");
 	piyo.age_ = 30;
-	aho.name_ = strdup("mogawa");
+	aho.name_ = strdup("42tokyo");
 	aho.age_ = 42;
 	list_t		head, first, second;
 	head.data_ = &hoge;

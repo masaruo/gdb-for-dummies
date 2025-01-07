@@ -38,7 +38,7 @@ int	main(void)
 /*
 cc -g basic.c
 gdb ./a.out
-break 10
+break 24
 run
 print str
 */

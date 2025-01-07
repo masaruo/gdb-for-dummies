@@ -1,0 +1,24 @@
+services:
+  cpp_dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VARIANT: latest
+    image: cpp:standard
+    container_name: cpp_container
+    volumes:
+      - type: bind
+        source: ${PWD}/..
+        target: /workspace
+        consistency: cached
+      - type: bind
+        source: ${HOME}/.gdbinit
+        target: /home/vscode/.gdbinit
+        read_only: true
+    command: sleep infinity
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    user: vscode
