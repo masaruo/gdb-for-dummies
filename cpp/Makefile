@@ -1,2 +1,2 @@
 all:
-	c++ -g -fno-limit-debug-info exception.cpp
+	c++ -g exception.cpp
