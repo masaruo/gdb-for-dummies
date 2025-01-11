@@ -1,5 +1,5 @@
 all:
-	cc -g -pthread thread.c
+	cc -g -lpthread thread.c
 
 thread:
-	cc -g -pthread -fsanitize=thread thread.c
+	cc -g -lpthread -fsanitize=thread thread.c
