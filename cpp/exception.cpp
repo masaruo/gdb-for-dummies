@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <vector>
 
+// void exceptTwo(std::vector<std::string> arr)
 void exceptTwo(std::vector<std::string> const &arr)
 {
 	throw (std::runtime_error("exception!"));
